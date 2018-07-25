@@ -1,0 +1,51 @@
+Result for running BST tests:
+unittest1.c
+---------- Decks differ for player 0 ----------
+---------- Decks differ for player 1 ----------
+---------- TESTING SHUFFLE() COMPLETE ----------
+File 'dominion.c'
+Lines executed:16.19% of 556
+Creating 'dominion.c.gcov'
+
+unittest2.c
+----- test if drawcard with no deck works -----
+----- Test if drawCard works with existing deck -----
+----- test if drawcard with no deck works -----
+----- Test if drawCard works with existing deck -----
+---------- TESTING drawCard() COMPLETE ----------
+
+
+File 'dominion.c'
+Lines executed:18.53% of 556
+Creating 'dominion.c.gcov'
+
+cardtest1.c
+----------------- Testing Card: smithy ----------------
+Test when deck is empty for player 0
+Test when deck is populated for player 0
+Test when deck is empty for player 1
+Test when deck is populated for player 1
+---------- TESTING drawCard() COMPLETE ----------
+
+
+File 'dominion.c'
+Lines executed:21.04% of 556
+Creating 'dominion.c.gcov'
+
+cardtest2.c
+----------------- Testing Card: smithy ----------------
+Test when deck is empty for player 0
+ERROR: Coins were not added to the hand after adventurer was played. 
+Test when deck is populated for player 0
+ERROR: Coins were not added to the hand after adventurer was played. 
+Test when deck is empty for player 1
+ERROR: Coins were not added to the hand after adventurer was played. 
+Test when deck is populated for player 1
+ERROR: Coins were not added to the hand after adventurer was played. 
+---------- TESTING drawCard() COMPLETE ----------
+
+
+File 'dominion.c'
+Lines executed:25.90% of 556
+Creating 'dominion.c.gcov'
+

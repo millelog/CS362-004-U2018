@@ -6,6 +6,13 @@ rngs.o: rngs.h rngs.c
 dominion.o: dominion.h dominion.c rngs.o
 	gcc -c dominion.c -g  $(CFLAGS)
 
+randomtestcard1: randomtestcard1.c dominion.o rngs.o
+	echo "Results for Random Test 1:" > randomtestcard1.results
+
+	gcc -o randomtestcard1.out randomtestcard1.c -g dominion.o rngs.o $(CFLAGS)
+	./randomtestcard1.out >> randomtestcard1.results
+	gcov dominion.c >> randomtestcard1.results
+
 playdom: dominion.o playdom.c
 	gcc -o playdom playdom.c -g dominion.o rngs.o $(CFLAGS)
 #To run playdom you need to entere: ./playdom <any integer number> like ./playdom 10*/

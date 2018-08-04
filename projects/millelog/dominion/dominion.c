@@ -651,7 +651,7 @@ int cardEffectSmithy(int card, int choice1, int choice2, int choice3, struct gam
   }
 
       //discard card from hand
-      discardCard(handPos, currentPlayer, state, 1);
+      discardCard(handPos, currentPlayer, state, 0);
       return 0;
 }
 
@@ -1275,6 +1275,8 @@ int discardCard(int handPos, int currentPlayer, struct gameState *state, int tra
     }
   else
     {
+      state->discardCount[currentPlayer]++;
+      state->discard[currentPlayer][state->discardCount[currentPlayer] - 1] = state->hand[currentPlayer][handPos];
       //replace discarded card with last card in hand
       state->hand[currentPlayer][handPos] = state->hand[currentPlayer][ (state->handCount[currentPlayer] - 1)];
       //set last card to -1

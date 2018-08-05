@@ -7,7 +7,7 @@
 #include <time.h>
 #include "rngs.h"
 
-#define TESTCARD "adventurer"
+#define TESTCARD "Village"
 
 
 int main(){
@@ -65,25 +65,23 @@ int main(){
 
 	        memcpy(&testG, &G, sizeof(struct gameState));
 
-			cardEffectAdventurer(adventurer, 0, 0, 0, &testG, testG.handCount[p]-1, 0, p);
-			//ensure discard/deck counts and hand count
-			assert(testG.deckCount[p]+testG.discardCount[p] == G.discardCount[p]+G.deckCount[p]-2);
-	        assert(testG.handCount[p] == G.handCount[p]+2);
+			cardEffectVillage(village, 0, 0, 0, &testG, testG.handCount[p]-1, 0, p);
+			//ensure discard/deck counts and hand count are the same
+			assert(testG.deckCount[p]+testG.discardCount[p] == G.discardCount[p]+G.deckCount[p]);
+	        assert(testG.handCount[p] == G.handCount[p]);
 
-	        //ensure cards added are treasure
-	        for(i=testG.handCount[p]-2; i<testG.handCount[p]; i++){
-	        	assert(testG.hand[p][i] == copper || testG.hand[p][i] == silver || testG.hand[p][i] == gold);
-	        }
+	        //ensure actions were added
+	        assert(testG.numActions == G.numActions+2);
 
 	        //ensure nothing else in the hand was mutated
 	        for(i=0; i<G.handCount[p]-1; i++){
 	        	assert(testG.hand[p][i] == G.hand[p][i]);
 	        }
 	   	}
-	    printf("Test: %d ", j);
-	    if(j%10==0){
+	    printf("Test: %d [x]", j);
+	    if(j%5==0){
 	    	printf("\n");
 	    }
     }
-    printf("\nAll %d tests for cardEffect%s are valid.\n", numTests, TESTCARD);
+    printf("\n\n---------- All %d tests for cardEffect%s are valid ----------\n\n", numTests, TESTCARD);
 }

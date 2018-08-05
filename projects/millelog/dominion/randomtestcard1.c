@@ -55,7 +55,7 @@ int main(){
 	        	G.deckCount[p]++;
 	        	G.deck[p][G.deckCount[p]-1] = copper;
 	        }
-	        for(i=0; i<7; i++){
+	        for(i=0; i<3; i++){
 	        	G.deckCount[p]++;
 	        	G.deck[p][G.deckCount[p]-1] = duchy;
 	        }
@@ -79,5 +79,5 @@ int main(){
 	    	printf("\n");
 	    }
     }
-    printf("\nAll %d tests for cardEffectSmithy are valid.\n", numTests);
+    printf("\nAll %d tests for cardEffect%s are valid.\n", numTests, TESTCARD);
 }

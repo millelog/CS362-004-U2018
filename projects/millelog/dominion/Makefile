@@ -13,6 +13,20 @@ randomtestcard1: randomtestcard1.c dominion.o rngs.o
 	./randomtestcard1.out >> randomtestcard1.results
 	gcov dominion.c >> randomtestcard1.results
 
+randomtestadventurer: randomtestadventurer.c dominion.o rngs.o
+	echo "Results for Random Test 1:" > randomtestadventurer.results
+
+	gcc -o randomtestadventurer.out randomtestadventurer.c -g dominion.o rngs.o $(CFLAGS)
+	./randomtestadventurer.out >> randomtestadventurer.results
+	gcov dominion.c >> randomtestadventurer.results
+
+randomtestcard2: randomtestcard2.c dominion.o rngs.o
+	echo "Results for Random Test 1:" > randomtestcard2.results
+
+	gcc -o randomtestcard2.out randomtestcard2.c -g dominion.o rngs.o $(CFLAGS)
+	./randomtestcard2.out >> randomtestcard2.results
+	gcov dominion.c >> randomtestcard2.results
+
 playdom: dominion.o playdom.c
 	gcc -o playdom playdom.c -g dominion.o rngs.o $(CFLAGS)
 #To run playdom you need to entere: ./playdom <any integer number> like ./playdom 10*/

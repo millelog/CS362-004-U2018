@@ -201,8 +201,8 @@ Test: 1961   Test: 1962   Test: 1963   Test: 1964   Test: 1965   Test: 1966   Te
 Test: 1971   Test: 1972   Test: 1973   Test: 1974   Test: 1975   Test: 1976   Test: 1977   Test: 1978   Test: 1979   Test: 1980   
 Test: 1981   Test: 1982   Test: 1983   Test: 1984   Test: 1985   Test: 1986   Test: 1987   Test: 1988   Test: 1989   Test: 1990   
 Test: 1991   Test: 1992   Test: 1993   Test: 1994   Test: 1995   Test: 1996   Test: 1997   Test: 1998   Test: 1999   
-All 2000 tests for cardEffectSmithy are valid.
+All 2000 tests for cardEffectsmithy are valid.
 File 'dominion.c'
-Lines executed:23.12% of 558
+Lines executed:21.79% of 560
 Creating 'dominion.c.gcov'
 

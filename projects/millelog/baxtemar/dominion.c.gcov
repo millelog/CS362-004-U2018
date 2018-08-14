@@ -688,7 +688,7 @@
     #####:  683:  int currentPlayer = whoseTurn(state);
         -:  684:  int i;
         -:  685:  //+3 Cards
-    #####:  686:  for (i = 0; i <= 3; i++)
+    #####:  686:  for (i = 0; i < 3; i++)
         -:  687:  {
     #####:  688:    drawCard(currentPlayer, state);
         -:  689:  }

@@ -35,9 +35,8 @@ int main(){
         memcpy(&G, &testG, sizeof(struct gameState));
 
 
-        cardEffectSmithy(smithy, 0, 0, 0, &testG, 0, 0, p);
-
-        assert(testG.deckCount[p] == deckCount-3);
+        smithyEffect(&testG, 0);
+        assert(testG.deckCount[p]+testG.discardCount[p] == deckCount-4);
         assert(testG.discardCount[p] == 0); 
         assert(testG.handCount[p] == G.handCount[p]+2); 
 
@@ -45,10 +44,10 @@ int main(){
         printf("Test when deck is populated for player %d\n", p);
         memset(&testG, 23, sizeof(struct gameState));
         initializeGame(numPlayer, k, seed, &testG);
-        testG.deckCount[p] = 0;
-        testG.discardCount[p] = deckCount;
+        testG.deckCount[p] = deckCount;
+        testG.discardCount[p] = 0;
         for(i=0; i<deckCount; i++){
-            testG.discard[p][i] = k[i%10];
+            testG.deck[p][i] = k[i%10];
         }
         testG.handCount[p] = 1;
         testG.hand[p][0] = smithy;
@@ -56,9 +55,9 @@ int main(){
         memcpy(&G, &testG, sizeof(struct gameState));
 
 
-        cardEffectSmithy(smithy, 0, 0, 0, &testG, 0, 0, p);
+        smithyEffect(&testG, 0);
 
-        assert(testG.deckCount[p] == deckCount-3);
+        assert(testG.deckCount[p]+testG.discardCount[p] == deckCount-4);
         assert(testG.handCount[p] == G.handCount[p]+2);
     }
      printf("---------- TESTING drawCard() COMPLETE ----------\n\n\n");

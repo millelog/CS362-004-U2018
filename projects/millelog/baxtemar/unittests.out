@@ -1,0 +1,22 @@
+Result for running BST tests:
+unittest1.c
+---------- Decks differ for player 0 ----------
+---------- Decks differ for player 1 ----------
+---------- TESTING SHUFFLE() COMPLETE ----------
+File 'dominion.c'
+Lines executed:16.89% of 610
+Creating 'dominion.c.gcov'
+
+unittest2.c
+----- test if drawcard with no deck works -----
+----- Test if drawCard works with existing deck -----
+----- test if drawcard with no deck works -----
+----- Test if drawCard works with existing deck -----
+---------- TESTING drawCard() COMPLETE ----------
+
+
+File 'dominion.c'
+Lines executed:16.89% of 610
+Creating 'dominion.c.gcov'
+
+cardtest1.c

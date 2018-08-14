@@ -27,6 +27,29 @@ randomtestcard2: randomtestcard2.c dominion.o rngs.o
 	./randomtestcard2.out >> randomtestcard2.results
 	gcov dominion.c >> randomtestcard2.results
 
+unittestresults: unittest1.c unittest2.c cardtest1.c cardtest2.c dominion.o rngs.o
+	echo "Result for running BST tests:" > unittests.out
+
+	echo "unittest1.c" >> unittests.out
+	gcc -o unittest1 unittest1.c -g dominion.o rngs.o $(CFLAGS)
+	./unittest1 >> unittests.out
+	gcov dominion.c >> unittests.out
+
+	echo "unittest2.c" >> unittests.out
+	gcc -o unittest2 unittest2.c -g dominion.o rngs.o $(CFLAGS)
+	./unittest2 >> unittests.out
+	gcov dominion.c >> unittests.out
+
+	echo "cardtest1.c" >> unittests.out
+	gcc -o cardtest1 cardtest1.c -g dominion.o rngs.o $(CFLAGS)
+	./cardtest1 >> unittests.out
+	gcov dominion.c >> unittests.out
+
+	echo "cardtest2.c" >> unittests.out
+	gcc -o cardtest2 cardtest2.c -g dominion.o rngs.o $(CFLAGS)
+	./cardtest2 >> unittests.out
+	gcov dominion.c >> unittests.out
+
 playdom: dominion.o playdom.c
 	gcc -o playdom playdom.c -g dominion.o rngs.o $(CFLAGS)
 #To run playdom you need to entere: ./playdom <any integer number> like ./playdom 10*/
